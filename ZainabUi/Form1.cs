@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using Ozeki.Media;
 using ZainabUi.Myforms;
 
 namespace ZainabUi
@@ -19,10 +20,14 @@ namespace ZainabUi
         private IconButton currentbtn;
         private Panel leftborderbtn;
         private Form currentChildForm;
+
+        public CameraURLBuilderWF _myCameraUrlBuilder;
+        public string _cameraURL = "";
         public panelmenu()
         {
             InitializeComponent();
             leftborderbtn = new Panel();
+            _myCameraUrlBuilder = new CameraURLBuilderWF();
             leftborderbtn.Size = new Size(7, 60);
             panel1.Controls.Add(leftborderbtn);
             //Form
@@ -108,22 +113,36 @@ namespace ZainabUi
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBcolors.color1);
+            if (_cameraURL != "")
+            {
+                ActivateButton(sender, RGBcolors.color1);
 
-            iconCurrentChildForm.BackgroundImage = global::ZainabUi.Properties.Resources.oto;
-            iconCurrentChildForm.BackgroundImageLayout = ImageLayout.Stretch;
+                iconCurrentChildForm.BackgroundImage = global::ZainabUi.Properties.Resources.oto;
+                iconCurrentChildForm.BackgroundImageLayout = ImageLayout.Stretch;
 
-            OpenChildForm(new Otoscope());
+                OpenChildForm(new Otoscope(_cameraURL));
+            }
+            else
+            {
+                MessageBox.Show("Please select a visual device!");
+            }
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBcolors.color1);
+            if (_cameraURL != "")
+            {
+                ActivateButton(sender, RGBcolors.color1);
 
-            iconCurrentChildForm.BackgroundImage = global::ZainabUi.Properties.Resources.derm;
-            iconCurrentChildForm.BackgroundImageLayout = ImageLayout.Stretch;
+                iconCurrentChildForm.BackgroundImage = global::ZainabUi.Properties.Resources.derm;
+                iconCurrentChildForm.BackgroundImageLayout = ImageLayout.Stretch;
 
-            OpenChildForm(new Dermascope());
+                OpenChildForm(new Dermascope(_cameraURL));
+            }
+            else
+            {
+                MessageBox.Show("Please select a visual device!");
+            }
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
@@ -179,7 +198,12 @@ namespace ZainabUi
 
         private void panelmenu_Load(object sender, EventArgs e)
         {
-
+            var result = _myCameraUrlBuilder.ShowDialog();
+            if (result != DialogResult.OK) return;
+            _cameraURL = _myCameraUrlBuilder.CameraURL;
+            string[] strings = _myCameraUrlBuilder.CameraURL.Split('=');
+            label1.Text = strings[2].Replace(';', '!');
+            //MessageBox.Show(_cameraURL);
         }
 
         private void iconButton3_Click_1(object sender, EventArgs e)
@@ -214,13 +238,9 @@ namespace ZainabUi
             Application.Exit();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
+            _myCameraUrlBuilder.Dispose();
             Application.Exit();
         }
 
@@ -234,7 +254,7 @@ namespace ZainabUi
             {
                 WindowState = FormWindowState.Normal;
             }
-            Otoscope otoscope = new Otoscope();
+            //Otoscope otoscope = new Otoscope();
 
         }
 
@@ -246,6 +266,80 @@ namespace ZainabUi
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GroupBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            var result = _myCameraUrlBuilder.ShowDialog();
+            if (result != DialogResult.OK) return;
+            string[] strings = _myCameraUrlBuilder.CameraURL.Split('=');
+            label1.Text = strings[2].Replace(';', '!');
+            _cameraURL = _myCameraUrlBuilder.CameraURL;
+            //MessageBox.Show(label1.Text);
+        }
+
+        private void guna2ImageButton1_MouseEnter(object sender, EventArgs e)
+        {
+            
+            guna2ImageButton1.BackColor = Color.FromArgb(37, 57, 89);
+            guna2ImageButton1.ForeColor = Color.Gainsboro;
+        }
+
+        private void guna2ImageButton1_MouseLeave(object sender, EventArgs e)
+        {
+            guna2ImageButton1.BackColor = Color.FromArgb(27, 31, 44);
+            guna2ImageButton1.ForeColor = Color.Gainsboro;
+        }
+
+        private void guna2ImageButton2_MouseEnter(object sender, EventArgs e)
+        {
+            guna2ImageButton2.BackColor = Color.FromArgb(37, 57, 89);
+            guna2ImageButton2.ForeColor = Color.Gainsboro;
+        }
+
+        private void guna2ImageButton2_MouseLeave(object sender, EventArgs e)
+        {
+            guna2ImageButton2.BackColor = Color.FromArgb(27, 31, 44);
+            guna2ImageButton2.ForeColor = Color.Gainsboro;
+        }
+
+        private void guna2ImageButton3_MouseEnter(object sender, EventArgs e)
+        {
+            guna2ImageButton3.BackColor = Color.FromArgb(37, 57, 89);
+            guna2ImageButton3.ForeColor = Color.Gainsboro;
+        }
+
+        private void guna2ImageButton3_MouseLeave(object sender, EventArgs e)
+        {
+            guna2ImageButton3.BackColor = Color.FromArgb(27, 31, 44);
+            guna2ImageButton3.ForeColor = Color.Gainsboro;
+        }
+
+        private void label1_MouseEnter(object sender, EventArgs e)
+        {
+            label1.BackColor = Color.FromArgb(37, 57, 89);
+            label1.ForeColor = Color.Gainsboro;
+        }
+
+        private void label1_MouseLeave(object sender, EventArgs e)
+        {
+            label1.BackColor = Color.FromArgb(27, 31, 44);
+            label1.ForeColor = Color.Gainsboro;
         }
     }
 }

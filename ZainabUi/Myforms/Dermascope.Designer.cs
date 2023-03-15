@@ -35,7 +35,9 @@
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.videoViewerWF1 = new Ozeki.Media.VideoViewerWF();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.guna2GroupBox2.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -59,6 +61,7 @@
             this.guna2GroupBox2.ShadowDecoration.Parent = this.guna2GroupBox2;
             this.guna2GroupBox2.Size = new System.Drawing.Size(242, 54);
             this.guna2GroupBox2.TabIndex = 2;
+            this.guna2GroupBox2.Click += new System.EventHandler(this.guna2GroupBox2_Click);
             // 
             // guna2CircleButton1
             // 
@@ -78,6 +81,7 @@
             this.guna2CircleButton1.Size = new System.Drawing.Size(39, 39);
             this.guna2CircleButton1.TabIndex = 0;
             this.guna2CircleButton1.UseTransparentBackground = true;
+            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
             // 
             // guna2Button1
             // 
@@ -94,6 +98,7 @@
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(39, 37);
             this.guna2Button1.TabIndex = 1;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2CircleButton2
             // 
@@ -114,6 +119,7 @@
             this.guna2CircleButton2.Size = new System.Drawing.Size(39, 39);
             this.guna2CircleButton2.TabIndex = 0;
             this.guna2CircleButton2.UseTransparentBackground = true;
+            this.guna2CircleButton2.Click += new System.EventHandler(this.guna2CircleButton2_Click);
             // 
             // guna2GroupBox1
             // 
@@ -132,6 +138,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.guna2Panel1.Controls.Add(this.guna2Button2);
             this.guna2Panel1.Controls.Add(this.guna2GroupBox2);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel1.ForeColor = System.Drawing.Color.Bisque;
@@ -140,6 +147,25 @@
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(800, 60);
             this.guna2Panel1.TabIndex = 1;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.guna2Button2.BackgroundImage = global::ZainabUi.Properties.Resources.diskette;
+            this.guna2Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
+            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.HoverState.Parent = this.guna2Button2;
+            this.guna2Button2.Location = new System.Drawing.Point(748, 16);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
+            this.guna2Button2.Size = new System.Drawing.Size(32, 26);
+            this.guna2Button2.TabIndex = 5;
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // videoViewerWF1
             // 
@@ -166,6 +192,7 @@
             this.Controls.Add(this.guna2GroupBox1);
             this.Name = "Dermascope";
             this.Text = "Dermascope";
+            this.Load += new System.EventHandler(this.Dermascope_Load);
             this.guna2GroupBox2.ResumeLayout(false);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
@@ -182,5 +209,7 @@
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Ozeki.Media.VideoViewerWF videoViewerWF1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }

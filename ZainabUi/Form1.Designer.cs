@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panellogo = new System.Windows.Forms.Panel();
@@ -51,6 +52,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(44)))));
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.iconButton2);
             this.panel1.Controls.Add(this.iconButton1);
             this.panel1.Controls.Add(this.panellogo);
@@ -61,10 +63,24 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.label1.Location = new System.Drawing.Point(0, 554);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(220, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Select Camera...";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.MouseEnter += new System.EventHandler(this.label1_MouseEnter);
+            this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
+            // 
             // iconButton2
             // 
-            this.iconButton2.BackgroundImage = global::ZainabUi.Properties.Resources.derm;
-            this.iconButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.iconButton2.BackgroundImage = global::ZainabUi.Properties.Resources.smallderm;
+            this.iconButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
             this.iconButton2.FlatAppearance.BorderSize = 0;
             this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -81,15 +97,15 @@
             this.iconButton2.Size = new System.Drawing.Size(220, 123);
             this.iconButton2.TabIndex = 2;
             this.iconButton2.Text = "Dermascope";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = true;
             this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // iconButton1
             // 
-            this.iconButton1.BackgroundImage = global::ZainabUi.Properties.Resources.oto;
-            this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.iconButton1.BackgroundImage = global::ZainabUi.Properties.Resources.smalloto;
+            this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
             this.iconButton1.FlatAppearance.BorderSize = 0;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -162,6 +178,8 @@
             this.guna2ImageButton3.Size = new System.Drawing.Size(24, 26);
             this.guna2ImageButton3.TabIndex = 15;
             this.guna2ImageButton3.Click += new System.EventHandler(this.guna2ImageButton3_Click);
+            this.guna2ImageButton3.MouseEnter += new System.EventHandler(this.guna2ImageButton3_MouseEnter);
+            this.guna2ImageButton3.MouseLeave += new System.EventHandler(this.guna2ImageButton3_MouseLeave);
             // 
             // lbltitlechildform
             // 
@@ -185,6 +203,8 @@
             this.guna2ImageButton2.Size = new System.Drawing.Size(25, 26);
             this.guna2ImageButton2.TabIndex = 14;
             this.guna2ImageButton2.Click += new System.EventHandler(this.guna2ImageButton2_Click);
+            this.guna2ImageButton2.MouseEnter += new System.EventHandler(this.guna2ImageButton2_MouseEnter);
+            this.guna2ImageButton2.MouseLeave += new System.EventHandler(this.guna2ImageButton2_MouseLeave);
             // 
             // iconCurrentChildForm
             // 
@@ -213,6 +233,8 @@
             this.guna2ImageButton1.Size = new System.Drawing.Size(17, 19);
             this.guna2ImageButton1.TabIndex = 13;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
+            this.guna2ImageButton1.MouseEnter += new System.EventHandler(this.guna2ImageButton1_MouseEnter);
+            this.guna2ImageButton1.MouseLeave += new System.EventHandler(this.guna2ImageButton1_MouseLeave);
             // 
             // paneldesktop
             // 
@@ -226,7 +248,7 @@
             // 
             // panelshadow
             // 
-            this.panelshadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panelshadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(172)))), ((int)(((byte)(2)))));
             this.panelshadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelshadow.Location = new System.Drawing.Point(220, 34);
             this.panelshadow.Name = "panelshadow";
@@ -270,6 +292,7 @@
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton3;
         private System.Windows.Forms.Panel panelshadow;
+        public System.Windows.Forms.Label label1;
     }
 }
 

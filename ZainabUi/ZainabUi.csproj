@@ -67,6 +67,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="globalVars.cs" />
     <Compile Include="Myforms\Customers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,13 +275,37 @@
     <None Include="Resources\otoscopeIcon1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\oto.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\derm.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sojroIntro_cleanup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\otosmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smalloto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallderm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diskette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-arrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
